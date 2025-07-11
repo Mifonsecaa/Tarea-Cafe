@@ -41,8 +41,7 @@ if __name__ == "__main__":
 
     print("Características más Importantes (Random Forest)")
     print(importance_df.head(50).to_string())
-    print("######################################################################################################")
-
+    
 
     top_n = 15
     top_features = importance_df.head(top_n)
@@ -64,52 +63,7 @@ if __name__ == "__main__":
     plt.tight_layout()
     plt.show()
 
-    ######################################################################################################
 
-    '''# Entrenar el modelo Random Forest (el que tuvo mejor rendimiento)
-    linear_model = LinearRegression()
-    linear_model.fit(preprocessor.fit_transform(X_train), Y_train)
-
-    # Obtener la importancia de las características
-    feature_importances = linear_model.coef_
-
-    # Obtener los nombres de las características después del preprocesamiento
-    # Esto es un poco más complejo debido al OneHotEncoder
-
-    # Nombres de las características numéricas
-    feature_names = numeric_features
-
-    # Nombres de las características categóricas después del OneHotEncoder
-    # Obtener las categorías de cada columna categórica
-    for i, col in enumerate(categorical_features):
-        ohe_categories = preprocessor.named_transformers_['cat'].categories_[i]
-        feature_names.extend([f'{col}_{cat}' for cat in ohe_categories])
-
-    # Crear un DataFrame para visualizar la importancia de las características
-    importance_df_l = pd.DataFrame({'Feature': feature_names, 'Importance': feature_importances})
-    importance_df_l = importance_df_l.sort_values(by='Importance', ascending=False)
-
-    print("Características más Importantes (Linear Regression)")
-    print(importance_df_l.head(50).to_string())
-    top_n = 15
-    top_features = importance_df_l.head(top_n)
-
-    # Crear el gráfico de barras horizontal
-    plt.figure(figsize=(12, 6))
-    sns.barplot(
-        x="Importance",
-        y="Feature",
-        data=top_features,
-        hue="Feature",
-        palette="Blues_d",
-        dodge=False,
-        legend=False
-    )
-    plt.title("Top 15 Características más Importantes (linear Regression)")
-    plt.xlabel("Importancia")
-    plt.ylabel("Característica")
-    plt.tight_layout()
-    plt.show()'''
 
 
 
