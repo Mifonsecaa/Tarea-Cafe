@@ -6,10 +6,16 @@ from data_preprocessing import train_test
 import joblib # Para guardar y cargar modelo
 
 # Cargar los datos preprocesados
+tt = train_test()
+preprocessor = tt.preprocessor
+X_train_raw = tt.X_train
+X_test_raw = tt.X_test
 
-preprocessor = train_test().preprocessor
-X_train_processed = pd.read_csv("X_train_processed.csv").values
-X_test_processed = pd.read_csv("X_test_processed.csv").values
+# Aplicar el preprocesador para obtener los datos procesados en el formato correcto
+X_train_processed = preprocessor.fit_transform(X_train_raw)
+X_test_processed = preprocessor.transform(X_test_raw)
+
+# Cargar las variables objetivo desde CSV
 Y_train = pd.read_csv("Y_train.csv").values.ravel()
 Y_test = pd.read_csv("Y_test.csv").values.ravel()
 

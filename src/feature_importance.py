@@ -1,7 +1,6 @@
 from data_preprocessing import train_test
 from sklearn.ensemble import RandomForestRegressor
 import pandas as pd
-from sklearn.linear_model import LinearRegression
 import matplotlib.pyplot as plt
 import seaborn as sns
 
@@ -40,8 +39,8 @@ if __name__ == "__main__":
     importance_df = importance_df.sort_values(by='Importance', ascending=False)
 
     print("Características más Importantes (Random Forest)")
-    print(importance_df.head(50).to_string())
-    
+    print(importance_df.head(20).to_string())
+
 
     top_n = 15
     top_features = importance_df.head(top_n)

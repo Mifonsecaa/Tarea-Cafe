@@ -184,8 +184,12 @@ if __name__ == "__main__":
     X_train_processed = preprocessor.fit_transform(X_train)
     X_test_processed = preprocessor.transform(X_test)
 
-    print(f"NaNs in X_train_processed: {np.isnan(X_train_processed).sum()}\n")
-    print(f"NaNs in X_test_processed: {np.isnan(X_test_processed).sum()}\n")
+    # Convertir a array denso para poder usar np.isnan y guardar en CSV
+    X_train_processed_dense = X_train_processed.toarray()
+    X_test_processed_dense = X_test_processed.toarray()
+
+    print(f"NaNs in X_train_processed: {np.isnan(X_train_processed_dense).sum()}\n")
+    print(f"NaNs in X_test_processed: {np.isnan(X_test_processed_dense).sum()}\n")
 
     # Guardar los conjuntos preprocesados para el siguiente paso
     pd.DataFrame(X_train_processed).to_csv('X_train_processed.csv', index=False)

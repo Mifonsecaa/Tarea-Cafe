@@ -21,11 +21,15 @@ def cargar_data():
     # Diccionario para almacenar los DataFrames
     dataframes = {}
 
-
     for i, path in enumerate(file_paths):
         try:
-            df = pd.read_excel(path, header=4)
-            dataframes[df_names[i]] = df
+            # Leer hoja1
+            df1 = pd.read_excel(path, sheet_name=0, header=4)
+            dataframes[df_names[i] + "_hoja1"] = df1
+
+            # Leer hoja2
+            df2 = pd.read_excel(path, sheet_name=1, header=4)
+            dataframes[df_names[i] + "_hoja2"] = df2
         except Exception as e:
             print(f"Error al leer {path}: {e}")
 
