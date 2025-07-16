@@ -3,7 +3,7 @@
 
 Este repositorio contiene código y datos para el análisis de calidad del café usando modelos de machine learning como Random Forest Regressor.
 
-El objetivo de este proyecto es predecir la calidad del café, medida por el 'Puntaje de Taza', utilizando datos históricos de la tostadora "Campesino". Se analizaron los datos proporcionados en tres archvios Excel, se realizó un preprocesamiento adecuadom se entrenaron modelos de regresión y se analizó la explicabilidad de los resultados para identificar las variables más influyentes.
+El objetivo de este proyecto es predecir la calidad del café, medida por el 'Puntaje de Taza', utilizando datos históricos de la tostadora "Campesino". Se analizaron los datos proporcionados en tres archvios Excel, se realizó un preprocesamiento adecuado se entrenaron modelos de regresión y se analizó la explicabilidad de los resultados para identificar las variables más influyentes.
 
 ---
 
