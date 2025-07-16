@@ -17,7 +17,7 @@ Se recomienda seguir los siguientes pasos para configurar correctamente el entor
 2. Ir a la configuración de intérpretes (`Python Interpreter`).
 3. Hacer clic en **"Add New Interpreter"** o **"Add Interpreter"**.
 4. Seleccione el tipo: `VirtualEnv`.
-5. En **Base interpreter**, selecciona: `Python 3.12.3`.
+5. En **Base interpreter**, seleccione: `Python 3.12.3`.
 6. Cree el entorno virtual (`venv`) y espere a que se configure.
 
 ### 2. Instalar las dependencias
